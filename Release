@@ -1,0 +1,24 @@
+Origin: WCRefine
+Label: WCRefine
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
+Components: main
+Description: WCRefine packages for iOS 14 and later
+Date: Thu, 13 Aug 2026 06:25:36 +0000
+MD5Sum:
+ 1fee3d98b9995920fa7260038c90173f             2020 Packages
+ 816087a4bb964d89c96f2ba9365e1ed8              764 Packages.gz
+ 26ab2035b08b69a3d26c093da30ebddf              954 Packages.bz2
+ 1be91e904fae5ead06481d626a325a01              780 Packages.xz
+SHA1:
+ af4a66e97fc08888cb8d999e256989d99e9ab9f5             2020 Packages
+ ba03f7a07a145a96d06ccce2d6508237af2aa105              764 Packages.gz
+ fbaf25f522d6cf9c17906a14cf2ba916524a5ee5              954 Packages.bz2
+ 945c47afe010c6f4ca82ff56f579c1dea02d32fc              780 Packages.xz
+SHA256:
+ 4e6bfe893e87cd3acdce6ee841cb81f3226b4dd455e790086be9ef526a99f0bf             2020 Packages
+ 914e7b31eabdfe7a681749be78e549783ab72cab515b8d35bca96e351540f950              764 Packages.gz
+ 297c8736026cd3be9b1ec5ca7d7740c1d9ac18ac782634406aaf1ac808f6883f              954 Packages.bz2
+ 529a54968eed45b93339114803e00191630f1d152839f01f294a859bf881bcaf              780 Packages.xz
