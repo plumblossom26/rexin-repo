@@ -4,10 +4,10 @@ Architecture: iphoneos-arm64
 Maintainer: 热心网友
 Depends: firmware (>= 14.0), mobilesubstrate
 Filename: debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm64.deb
-Size: 9151060
-MD5sum: b57393b616d8454542dddfe48408a814
-SHA1: f2c1201732f784ed0d7b90a0ad2482407dbbd153
-SHA256: 73c81955eaa16bcd5332846ec4a45bcdb8bbaa5d9cb40487aefdf737abb2f2ac
+Size: 9146988
+MD5sum: 499598f0771a8da45c727ad441599fe0
+SHA1: b204541fa1b1bdddcf95f51156d1191e4a0f7b1d
+SHA256: 46c64b9939ed14b9d641e679e6590c101d7d223c2a1a9e8051a914c29c948733
 Section: Tweaks
 Priority: optional
 Description: 微信优化的重制版，基于微信8.0.64+版本制作。
@@ -22,10 +22,10 @@ Architecture: iphoneos-arm64e
 Maintainer: 热心网友
 Depends: firmware (>= 14.0), mobilesubstrate
 Filename: debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm64e.deb
-Size: 9158504
-MD5sum: 125674d6a75df6d3365e7fd754c69b0a
-SHA1: b34889d5471d6a139f07c13c5919633e4a93c5da
-SHA256: e26b100689b3697332ac7d0a58d3d25f57c49036aebe472021d36188fbc905af
+Size: 9157412
+MD5sum: 77a6e1bcd439604c9ce7876a52b2c7dc
+SHA1: 2d76c29b3183e7f2865f58045f9eb4e19aff341b
+SHA256: 4d6e2978bf3970fff9763b803e235054d0b4acdad5d8599efb9a0bdeda01c788
 Section: Tweaks
 Priority: optional
 Description: 微信优化的重制版，基于微信8.0.64+版本制作。
@@ -40,10 +40,10 @@ Architecture: iphoneos-arm
 Maintainer: 热心网友
 Depends: firmware (>= 14.0), mobilesubstrate
 Filename: debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm.deb
-Size: 9157752
-MD5sum: 6f2b738662de235ce2fe2f204b1878b3
-SHA1: 969f4306d250ec6857fb3102b02f3668f101df5f
-SHA256: 73a8a8daec0c03a41de4bc2cfe99490798579dd0a1a37205a74013b9abc462e0
+Size: 9155628
+MD5sum: ebd138da4a6740848c9c3fd986ce56e4
+SHA1: 29e6b85663c9f5890dc0519c4e1d501922dc1a95
+SHA256: 3d68372ddc08ee2182f2303752134e8c3552130769a481378c6fe9324a7f082b
 Section: Tweaks
 Priority: optional
 Description: 微信优化的重制版，基于微信8.0.64+版本制作。

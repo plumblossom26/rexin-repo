@@ -3,160 +3,227 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#070a10">
   <title>WCRefine 软件源</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --background: #0a0d14;
-      --surface: #121824;
-      --surface-strong: #182233;
-      --text: #f4f7fb;
-      --muted: #9ba9bb;
-      --accent: #6ee7b7;
-      --border: #283449;
-    }
     * { box-sizing: border-box; }
+    :root {
+      --bg: #070a10;
+      --panel: rgba(20, 26, 40, .72);
+      --panel-2: rgba(28, 36, 54, .6);
+      --border: rgba(255, 255, 255, .08);
+      --border-strong: rgba(255, 255, 255, .16);
+      --text: #eef2f8;
+      --muted: #95a3ba;
+      --accent: #5eead4;
+      --accent-2: #7c9cff;
+      --accent-ink: #04231d;
+      --radius: 20px;
+      color-scheme: dark;
+    }
+    html { -webkit-text-size-adjust: 100%; }
     body {
       margin: 0;
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 15% 0%, #14352d 0, transparent 35rem),
-        var(--background);
       color: var(--text);
-      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+      background:
+        radial-gradient(60rem 60rem at 12% -8%, rgba(94, 234, 212, .16), transparent 60%),
+        radial-gradient(50rem 50rem at 100% 0%, rgba(124, 156, 255, .14), transparent 55%),
+        var(--bg);
+      background-attachment: fixed;
     }
-    main { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 72px 0; }
-    h1 { margin: 0; font-size: clamp(2.2rem, 8vw, 4.8rem); line-height: 1; }
-    h2 { margin: 56px 0 20px; font-size: 1.5rem; }
-    .lead { max-width: 680px; margin: 22px 0 30px; color: var(--muted); font-size: 1.08rem; }
-    .source {
-      display: flex;
-      gap: 10px;
-      padding: 10px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: color-mix(in srgb, var(--surface) 90%, transparent);
+    .wrap { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: clamp(48px, 9vw, 96px) 0 64px; }
+
+    .hero { text-align: center; }
+    .app-icon {
+      width: 96px; height: 96px; border-radius: 24px; object-fit: cover;
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 20px 60px -18px rgba(94, 234, 212, .5), inset 0 1px 0 rgba(255, 255, 255, .15);
     }
-    .source code { min-width: 0; flex: 1; padding: 9px 12px; overflow-wrap: anywhere; }
-    button, .download {
-      border: 0;
-      border-radius: 10px;
-      background: var(--accent);
-      color: #06251b;
-      font-weight: 700;
-      cursor: pointer;
-      padding: 9px 16px;
-      text-decoration: none;
+    .app-icon--placeholder { display: grid; place-items: center; font-weight: 800; letter-spacing: .05em; color: var(--accent-ink); background: linear-gradient(150deg, var(--accent), var(--accent-2)); }
+    .eyebrow { margin: 22px 0 0; font-size: .8rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+    h1 {
+      margin: .3rem 0 0; font-size: clamp(2.6rem, 8vw, 4.4rem); line-height: 1.02; letter-spacing: -.02em; font-weight: 800;
+      background: linear-gradient(120deg, #ffffff 10%, #cfe9ff 42%, var(--accent) 92%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .hint { color: var(--muted); font-size: .92rem; }
-    .managers { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 4px; }
-    .manager { border: 1px solid var(--border); border-radius: 10px; background: var(--surface-strong); color: var(--text); font-weight: 600; text-decoration: none; padding: 10px 18px; }
-    .manager:hover { border-color: var(--accent); color: var(--accent); }
-    .manager.primary { background: var(--accent); border-color: var(--accent); color: #06251b; }
-    .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-    .package {
-      display: flex;
-      min-height: 270px;
-      flex-direction: column;
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: linear-gradient(145deg, var(--surface-strong), var(--surface));
+    .lead { max-width: 620px; margin: 18px auto 0; color: var(--muted); font-size: clamp(1rem, 2.4vw, 1.14rem); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 22px 0 0; }
+    .chip { border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: .85rem; background: var(--panel); backdrop-filter: blur(8px); }
+
+    .panel { margin: 34px auto 0; max-width: 720px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel); backdrop-filter: blur(14px); box-shadow: 0 24px 60px -30px rgba(0, 0, 0, .8); }
+    .source { display: flex; gap: 10px; align-items: center; padding: 10px 10px 10px 16px; }
+    .source code { flex: 1; min-width: 0; font-size: .98rem; overflow-wrap: anywhere; color: #dbe6f5; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .copy { flex: none; display: inline-flex; align-items: center; gap: 7px; border: 0; cursor: pointer; border-radius: 12px; padding: 11px 16px; font-weight: 700; color: var(--accent-ink); background: linear-gradient(140deg, var(--accent), #7fe9d6); transition: transform .15s ease, filter .15s ease; }
+    .copy:hover { filter: brightness(1.06); }
+    .copy:active { transform: scale(.97); }
+    .copy svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+    .managers { display: flex; flex-wrap: wrap; gap: 10px; padding: 0 10px 12px; }
+    .manager { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; border-radius: 12px; padding: 12px 16px; font-weight: 650; border: 1px solid var(--border-strong); color: var(--text); background: var(--panel-2); transition: transform .15s ease, border-color .15s ease, color .15s ease; }
+    .manager:hover { transform: translateY(-1px); border-color: var(--accent); color: var(--accent); }
+    .manager.primary { border-color: transparent; color: var(--accent-ink); background: linear-gradient(140deg, var(--accent), #8bf0dd); }
+    .manager.primary:hover { color: var(--accent-ink); filter: brightness(1.05); }
+    .hint { margin: 14px 4px 0; text-align: center; color: var(--muted); font-size: .9rem; }
+
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 34px 0 0; }
+    .step { border: 1px solid var(--border); border-radius: 16px; padding: 20px; background: var(--panel); backdrop-filter: blur(10px); }
+    .step b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: rgba(94, 234, 212, .14); color: var(--accent); }
+    .step h4 { margin: 14px 0 6px; font-size: 1.02rem; }
+    .step p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 56px 0 18px; }
+    .section-head h2 { margin: 0; font-size: 1.5rem; letter-spacing: -.01em; }
+    .section-head span { color: var(--muted); font-size: .9rem; }
+
+    .packages { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+    .package { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--border); border-radius: 20px; background: linear-gradient(160deg, var(--panel-2), var(--panel)); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; --c: var(--accent); }
+    .package[data-arch="root"] { --c: #f5c451; }
+    .package[data-arch="rootless"] { --c: #5eead4; }
+    .package[data-arch="roothide"] { --c: #b794ff; }
+    .package::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--c), transparent 70%); }
+    .package:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--c) 45%, var(--border-strong)); box-shadow: 0 30px 60px -34px rgba(0, 0, 0, .85); }
+    .package-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .badge { border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); color: var(--c); background: color-mix(in srgb, var(--c) 12%, transparent); border-radius: 999px; padding: 3px 11px; font-size: .82rem; font-weight: 650; }
+    .arch { margin-left: auto; color: var(--muted); font-size: .78rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .package h3 { margin: 0; font-size: 1.3rem; letter-spacing: -.01em; }
+    .package-desc { margin: 8px 0 0; color: var(--muted); font-size: .94rem; }
+    .meta { margin: 18px 0 20px; display: grid; gap: 8px; }
+    .meta div { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: baseline; }
+    .meta dt { color: var(--muted); font-size: .85rem; }
+    .meta dd { margin: 0; overflow-wrap: anywhere; font-size: .92rem; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .btn.download { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 9px; text-decoration: none; border-radius: 12px; padding: 11px 18px; font-weight: 700; color: var(--accent-ink); background: linear-gradient(140deg, var(--c), color-mix(in srgb, var(--c) 65%, #ffffff)); transition: transform .15s ease, filter .15s ease; }
+    .btn.download:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    .btn.download svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+    footer { margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: .86rem; display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; }
+
+    .reveal { opacity: 0; transform: translateY(14px); animation: reveal .7s cubic-bezier(.2, .7, .2, 1) forwards; }
+    @keyframes reveal { to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+      .package, .manager, .copy, .btn.download { transition: none; }
     }
-    .package-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .package h3 { margin: 0; font-size: 1.25rem; }
-    .package p { color: var(--muted); }
-    .badge { border: 1px solid #2f6b58; border-radius: 999px; color: var(--accent); padding: 2px 9px; font-size: .8rem; }
-    dl { margin: auto 0 18px; }
-    dl div { display: grid; grid-template-columns: 48px 1fr; gap: 10px; }
-    dt { color: var(--muted); }
-    dd { margin: 0; overflow-wrap: anywhere; }
-    .download { align-self: flex-start; }
-    footer { margin-top: 56px; color: var(--muted); }
     @media (max-width: 560px) {
-      main { padding-top: 44px; }
-      .source { flex-direction: column; }
-      button { width: 100%; }
-      .manager { flex: 1 1 100%; text-align: center; }
+      .source { flex-direction: column; align-items: stretch; }
+      .copy { justify-content: center; }
+      .manager { flex: 1 1 100%; }
+      footer { justify-content: center; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <header>
+  <main class="wrap">
+    <section class="hero reveal">
+      <img class="app-icon" src="https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/eb/b5/a8/ebb5a892-c161-c79f-ba51-2089219fb833/source/512x512bb.jpg" alt="WCRefine" width="96" height="96" loading="lazy">
+      <p class="eyebrow">iOS · 越狱软件源</p>
       <h1>WCRefine</h1>
-      <p class="lead">适用于微信 8.0.64+、iOS 14+ 的越狱软件源。支持有根、无根和隐根环境。</p>
+      <p class="lead">微信 8.0.64+ 优化插件的官方源，适配 iOS 14+，覆盖有根、无根与隐根环境。</p>
+      <div class="chips">
+        <span class="chip">iOS 14+</span>
+        <span class="chip">微信 8.0.64+</span>
+        <span class="chip">有根 · 无根 · 隐根</span>
+      </div>
+    </section>
+
+    <div class="panel reveal" style="animation-delay: .06s">
       <div class="source">
         <code id="source-url">正在获取软件源地址…</code>
-        <button id="copy-source" type="button">复制源地址</button>
+        <button class="copy" id="copy-source" type="button">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="9" rx="2"/><path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/></svg>
+          <span id="copy-label">复制</span>
+        </button>
       </div>
       <div class="managers">
-        <a class="manager primary" id="add-sileo" href="#" rel="nofollow">添加到 Sileo</a>
-        <a class="manager primary" id="add-zebra" href="#" rel="nofollow">添加到 Zebra</a>
-        <a class="manager" id="add-cydia" href="#" rel="nofollow">添加到 Cydia</a>
-        <a class="manager" id="add-installer" href="#" rel="nofollow">添加到 Installer</a>
+        <a class="manager primary" id="add-sileo" href="#" rel="nofollow" aria-label="添加到 Sileo">Sileo</a>
+        <a class="manager primary" id="add-zebra" href="#" rel="nofollow" aria-label="添加到 Zebra">Zebra</a>
+        <a class="manager" id="add-cydia" href="#" rel="nofollow" aria-label="添加到 Cydia">Cydia</a>
+        <a class="manager" id="add-installer" href="#" rel="nofollow" aria-label="添加到 Installer">Installer</a>
       </div>
-      <p class="hint">在手机上点按钮一键拉起对应管理器添加；也可复制上面的地址手动添加。</p>
-    </header>
+    </div>
+    <p class="hint">手机上点按钮一键拉起对应管理器添加；也可复制地址手动添加。</p>
 
-    <section>
-      <h2>软件包（3）</h2>
+    <section class="steps reveal" style="animation-delay: .12s">
+      <div class="step"><b>1</b><h4>复制源地址</h4><p>点上方按钮，或复制地址。</p></div>
+      <div class="step"><b>2</b><h4>添加到管理器</h4><p>在 Sileo / Zebra / Cydia 里新增该源。</p></div>
+      <div class="step"><b>3</b><h4>安装并重启</h4><p>搜索 WCRefine 安装，重启微信生效。</p></div>
+    </section>
+
+    <section class="reveal" style="animation-delay: .16s">
+      <div class="section-head">
+        <h2>软件包</h2>
+        <span>3 个 · 三种架构</span>
+      </div>
       <div class="packages">
         
-            <article class="package">
-              <div class="package-title">
-                <h3>WCRefine</h3>
+            <article class="package" data-arch="root">
+              <div class="package-head">
                 <span class="badge">有根</span>
+                <code class="arch">iphoneos-arm</code>
               </div>
-              <p>微信优化的重制版，基于微信8.0.64+版本制作。</p>
-              <dl>
+              <h3>WCRefine</h3>
+              <p class="package-desc">微信优化的重制版，基于微信8.0.64+版本制作。</p>
+              <dl class="meta">
                 <div><dt>版本</dt><dd>2.0-5beta1</dd></div>
-                <div><dt>架构</dt><dd>iphoneos-arm</dd></div>
-                <div><dt>标识</dt><dd>com.qimiao.WCRefine</dd></div>
+                <div><dt>标识</dt><dd class="mono">com.qimiao.WCRefine</dd></div>
               </dl>
-              <a class="download" href="debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm.deb">下载 DEB</a>
+              <a class="btn download" href="debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm.deb">
+                <span>下载 DEB</span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9m0 0 3.4-3.4M10 12 6.6 8.6M4 15.5h12"/></svg>
+              </a>
             </article>
             
 
-            <article class="package">
-              <div class="package-title">
-                <h3>WCRefine</h3>
+            <article class="package" data-arch="rootless">
+              <div class="package-head">
                 <span class="badge">无根</span>
+                <code class="arch">iphoneos-arm64</code>
               </div>
-              <p>微信优化的重制版，基于微信8.0.64+版本制作。</p>
-              <dl>
+              <h3>WCRefine</h3>
+              <p class="package-desc">微信优化的重制版，基于微信8.0.64+版本制作。</p>
+              <dl class="meta">
                 <div><dt>版本</dt><dd>2.0-5beta1</dd></div>
-                <div><dt>架构</dt><dd>iphoneos-arm64</dd></div>
-                <div><dt>标识</dt><dd>com.qimiao.WCRefine</dd></div>
+                <div><dt>标识</dt><dd class="mono">com.qimiao.WCRefine</dd></div>
               </dl>
-              <a class="download" href="debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm64.deb">下载 DEB</a>
+              <a class="btn download" href="debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm64.deb">
+                <span>下载 DEB</span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9m0 0 3.4-3.4M10 12 6.6 8.6M4 15.5h12"/></svg>
+              </a>
             </article>
             
 
-            <article class="package">
-              <div class="package-title">
-                <h3>WCRefine</h3>
+            <article class="package" data-arch="roothide">
+              <div class="package-head">
                 <span class="badge">隐根</span>
+                <code class="arch">iphoneos-arm64e</code>
               </div>
-              <p>微信优化的重制版，基于微信8.0.64+版本制作。</p>
-              <dl>
+              <h3>WCRefine</h3>
+              <p class="package-desc">微信优化的重制版，基于微信8.0.64+版本制作。</p>
+              <dl class="meta">
                 <div><dt>版本</dt><dd>2.0-5beta1</dd></div>
-                <div><dt>架构</dt><dd>iphoneos-arm64e</dd></div>
-                <div><dt>标识</dt><dd>com.qimiao.WCRefine</dd></div>
+                <div><dt>标识</dt><dd class="mono">com.qimiao.WCRefine</dd></div>
               </dl>
-              <a class="download" href="debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm64e.deb">下载 DEB</a>
+              <a class="btn download" href="debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm64e.deb">
+                <span>下载 DEB</span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9m0 0 3.4-3.4M10 12 6.6 8.6M4 15.5h12"/></svg>
+              </a>
             </article>
             
       </div>
     </section>
 
-    <footer>索引由 apt-repo/build_repo.py 生成，本地发布到 GitHub Pages。</footer>
+    <footer>
+      <span>索引由 build_repo.py 生成，本地发布到 GitHub Pages</span>
+      <span>WCRefine · 微信优化插件</span>
+    </footer>
   </main>
   <script>
     const sourceUrl = new URL("./", window.location.href).href;
     const sourceElement = document.getElementById("source-url");
-    const copyButton = document.getElementById("copy-source");
     sourceElement.textContent = sourceUrl;
     const managerLinks = {
       "add-sileo": "sileo://source/" + sourceUrl,
@@ -168,10 +235,20 @@
       const link = document.getElementById(id);
       if (link) link.href = href;
     }
+    const copyButton = document.getElementById("copy-source");
+    const copyLabel = document.getElementById("copy-label");
     copyButton.addEventListener("click", async () => {
-      await navigator.clipboard.writeText(sourceUrl);
-      copyButton.textContent = "已复制";
-      setTimeout(() => copyButton.textContent = "复制源地址", 1600);
+      try {
+        await navigator.clipboard.writeText(sourceUrl);
+      } catch (err) {
+        const range = document.createRange();
+        range.selectNodeContents(sourceElement);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+      copyLabel.textContent = "已复制";
+      setTimeout(() => { copyLabel.textContent = "复制"; }, 1600);
     });
   </script>
 </body>
