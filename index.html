@@ -50,6 +50,10 @@
       text-decoration: none;
     }
     .hint { color: var(--muted); font-size: .92rem; }
+    .managers { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 4px; }
+    .manager { border: 1px solid var(--border); border-radius: 10px; background: var(--surface-strong); color: var(--text); font-weight: 600; text-decoration: none; padding: 10px 18px; }
+    .manager:hover { border-color: var(--accent); color: var(--accent); }
+    .manager.primary { background: var(--accent); border-color: var(--accent); color: #06251b; }
     .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
     .package {
       display: flex;
@@ -74,6 +78,7 @@
       main { padding-top: 44px; }
       .source { flex-direction: column; }
       button { width: 100%; }
+      .manager { flex: 1 1 100%; text-align: center; }
     }
   </style>
 </head>
@@ -86,7 +91,13 @@
         <code id="source-url">正在获取软件源地址…</code>
         <button id="copy-source" type="button">复制源地址</button>
       </div>
-      <p class="hint">在 Cydia、Sileo 或 Zebra 中添加上面的完整地址。</p>
+      <div class="managers">
+        <a class="manager primary" id="add-sileo" href="#" rel="nofollow">添加到 Sileo</a>
+        <a class="manager primary" id="add-zebra" href="#" rel="nofollow">添加到 Zebra</a>
+        <a class="manager" id="add-cydia" href="#" rel="nofollow">添加到 Cydia</a>
+        <a class="manager" id="add-installer" href="#" rel="nofollow">添加到 Installer</a>
+      </div>
+      <p class="hint">在手机上点按钮一键拉起对应管理器添加；也可复制上面的地址手动添加。</p>
     </header>
 
     <section>
@@ -147,6 +158,16 @@
     const sourceElement = document.getElementById("source-url");
     const copyButton = document.getElementById("copy-source");
     sourceElement.textContent = sourceUrl;
+    const managerLinks = {
+      "add-sileo": "sileo://source/" + sourceUrl,
+      "add-zebra": "zbra://sources/add/" + sourceUrl,
+      "add-cydia": "cydia://url/https://cydia.saurik.com/api/share#?source=" + sourceUrl,
+      "add-installer": "installer://add/" + sourceUrl,
+    };
+    for (const [id, href] of Object.entries(managerLinks)) {
+      const link = document.getElementById(id);
+      if (link) link.href = href;
+    }
     copyButton.addEventListener("click", async () => {
       await navigator.clipboard.writeText(sourceUrl);
       copyButton.textContent = "已复制";

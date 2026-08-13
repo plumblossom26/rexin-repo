@@ -6,7 +6,7 @@ Codename: ios
 Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: WCRefine packages for iOS 14 and later
-Date: Thu, 13 Aug 2026 06:25:36 +0000
+Date: Thu, 13 Aug 2026 06:37:35 +0000
 MD5Sum:
  1fee3d98b9995920fa7260038c90173f             2020 Packages
  816087a4bb964d89c96f2ba9365e1ed8              764 Packages.gz
