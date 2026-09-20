@@ -6,19 +6,19 @@ Codename: ios
 Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: WCRefine packages for iOS 14 and later
-Date: Thu, 13 Aug 2026 07:42:28 +0000
+Date: Sun, 20 Sep 2026 00:59:53 +0000
 MD5Sum:
- 66c2f9b596955f7865ee7a74ba3133ab             2020 Packages
- 999c2833e7aa620f15baa5d290d63783              767 Packages.gz
- b423ffe6d2b8106333dea508c6d3bbde              958 Packages.bz2
- 1e5410c431247fbb27a671095f747d14              776 Packages.xz
+ 5f9bb5205371c5ce1db2b42e4edd808d             1993 Packages
+ dc27c0c1142ebeb206a5862deeb8fbb4              762 Packages.gz
+ 342e8f43fd7d810fcd1dcf6767bf1aba              956 Packages.bz2
+ c271a0dae854923c2e9a5e7a2ceb8540              772 Packages.xz
 SHA1:
- e4bb0c58047ee6e7cc294b8d61123133181d37fb             2020 Packages
- b210873d3fba94fcf51d34ec0a5c6b9d8cf0a5ce              767 Packages.gz
- 4bb9e160d5a840a1029cc651204d7da5ce2746d6              958 Packages.bz2
- 08327ed836942755775dcb08f1d19bd90995f018              776 Packages.xz
+ 72d96064746c5f424af93f82aeddd4dbbf41b567             1993 Packages
+ 64b7b0e54ecfa4016b92f2fee950c717cf9e68c3              762 Packages.gz
+ 347badebc0d6d08005626423c763187e08a7100a              956 Packages.bz2
+ 29ffd64747a6d35d18dbb474fc5aa602470c5c40              772 Packages.xz
 SHA256:
- fc9cf179a11ff0f57415131375d9179abbbe64f9bbbe8b0f65569382a232cf2a             2020 Packages
- a3a545cad5a726e0e30d5739defb6f6c440350e23a0a134e27975b4c9e793238              767 Packages.gz
- 61397c01d6b4dfe42df5cacbc548a6cdbfab54ace5802c879d6a9e8a4a31dfe6              958 Packages.bz2
- 297478b3134876b138c93692af5939187b3ddaa610bf81d94d374bd7f9cfbf83              776 Packages.xz
+ ee4439eaeb51347212898154e6d57881ae144d1b0663f5fc60a7cc7efde99a6b             1993 Packages
+ a222e789d7d12b93426a35f84ba62f8c8742996c3b4745edabbb789560b66631              762 Packages.gz
+ fbb846a0667f75c25afc14bd082dbfb1d507e1eeaa1a7a312ec7a2a9d9b84be5              956 Packages.bz2
+ 0f814e3f2a29bcd054cc3ff06bc7b3b772fc74f61067960707840611cb8d2b57              772 Packages.xz

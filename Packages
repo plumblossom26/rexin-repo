@@ -1,13 +1,13 @@
 Package: com.qimiao.WCRefine
-Version: 2.0-5beta1
+Version: 2.1-6
 Architecture: iphoneos-arm64
 Maintainer: 热心网友
 Depends: firmware (>= 14.0), mobilesubstrate
-Filename: debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm64.deb
-Size: 9146988
-MD5sum: 499598f0771a8da45c727ad441599fe0
-SHA1: b204541fa1b1bdddcf95f51156d1191e4a0f7b1d
-SHA256: 46c64b9939ed14b9d641e679e6590c101d7d223c2a1a9e8051a914c29c948733
+Filename: debs/com.qimiao.wcrefine_2.1-6_iphoneos-arm64.deb
+Size: 10439040
+MD5sum: c46727bfe30edb33522cb9aa5af8e007
+SHA1: 0d32f96dc7453a0530c04018f9b4344f826e5042
+SHA256: 3664eef279f4193840fafc647098b80ebede65b27e793f37e8ebc7a3e6538310
 Section: Tweaks
 Priority: optional
 Description: 微信优化的重制版，基于微信8.0.64+版本制作。
@@ -17,33 +17,33 @@ Icon: https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/eb/b5/a8/ebb5a892-c1
 Name: WCRefine
 
 Package: com.qimiao.WCRefine
-Version: 2.0-5beta1
-Architecture: iphoneos-arm64e
-Maintainer: 热心网友
-Depends: firmware (>= 14.0), mobilesubstrate
-Filename: debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm64e.deb
-Size: 9157412
-MD5sum: 77a6e1bcd439604c9ce7876a52b2c7dc
-SHA1: 2d76c29b3183e7f2865f58045f9eb4e19aff341b
-SHA256: 4d6e2978bf3970fff9763b803e235054d0b4acdad5d8599efb9a0bdeda01c788
-Section: Tweaks
-Priority: optional
-Description: 微信优化的重制版，基于微信8.0.64+版本制作。
-Author: 热心网友
-Dev: 君临
-Icon: https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/eb/b5/a8/ebb5a892-c161-c79f-ba51-2089219fb833/source/512x512bb.jpg
-Name: WCRefine
-
-Package: com.qimiao.WCRefine
-Version: 2.0-5beta1
+Version: 2.1-6
 Architecture: iphoneos-arm
 Maintainer: 热心网友
 Depends: firmware (>= 14.0), mobilesubstrate
-Filename: debs/com.qimiao.wcrefine_2.0-5beta1_iphoneos-arm.deb
-Size: 9155628
-MD5sum: ebd138da4a6740848c9c3fd986ce56e4
-SHA1: 29e6b85663c9f5890dc0519c4e1d501922dc1a95
-SHA256: 3d68372ddc08ee2182f2303752134e8c3552130769a481378c6fe9324a7f082b
+Filename: debs/com.qimiao.wcrefine_2.1-6_iphoneos-arm.deb
+Size: 10438188
+MD5sum: d189e630646f6c5eb2a88f0cc0627700
+SHA1: 17a670bbb65fd25156d83c6e2c8847edfa4a6b82
+SHA256: 25035ab50f3892aa95bc5eda11f42b4b37a24e8e3e583db6ff415f50e0f1fd16
+Section: Tweaks
+Priority: optional
+Description: 微信优化的重制版，基于微信8.0.64+版本制作。
+Author: 热心网友
+Dev: 君临
+Icon: https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/eb/b5/a8/ebb5a892-c161-c79f-ba51-2089219fb833/source/512x512bb.jpg
+Name: WCRefine
+
+Package: com.qimiao.WCRefine
+Version: 2.1-6
+Architecture: iphoneos-arm64e
+Maintainer: 热心网友
+Depends: firmware (>= 14.0), mobilesubstrate
+Filename: debs/com.qimiao.wcrefine_2.1-6_iphoneos-arm64e.deb
+Size: 10435828
+MD5sum: 6ac7cd190db877f0c0d1a5392cc295d9
+SHA1: e9fa74925caffa00f2f7d4e72acfb997e2d408bb
+SHA256: 4f20d99f43756ad47774a8a17afafbd6f06209d7a0532da5b53302554a586ff0
 Section: Tweaks
 Priority: optional
 Description: 微信优化的重制版，基于微信8.0.64+版本制作。
